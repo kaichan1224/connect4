@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/game.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/title.css')}}">
+{% endblock %}
+
+{% block body %}
+<h2>コネクトフォーのプレイ画面デス。</h2>
+<div class = "pure-g">
+    <!--左側-->
+    <div class = "pure-u-3-5">
+        <!-- 盤の表示画面-->
+        <table id="table">
+            {% for i in range(6) %}
+            <tr>
+                {% for j in range(7)%}
+                    <!-- turnで色を場合分け-->
+                    {% if state.pieces[i*7+j]==1 %}
+                        <td class="stone_player"></td>
+                    {% elif state.enemy_pieces[i*7+j]==1 %}
+                        <td class="stone_enemy"></td>
+                    {% else %}
+                        <td class="stone_empty"></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <!-- 石を置く場所を表示する-->
+        <table id="action_table">
+            <tr>
+                {% if finish_flag == False  %}
+                    {% for j in range(7) %}
+                        {% if j in state.legal_actions() %}
+                            <td class="actions_legal"><a href="{{url}}?query={{ base64.urlsafe_b64encode(json.dumps({'pieces': state.pieces,'enemy_pieces':state.enemy_pieces,'place': (j),'turn':state.turn}).encode()).decode() }}"><div class="actions_arrow">↑</div></a></td>
+                        {% else %}
+                            <td class="actions_illegal"></td>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </tr>
+        </table>
+    </div>    
+    <!--右側-->
+    <div class = "pure-u-2-5">
+        <a href="{{url_for('title')}}"><p class="goback">go back</p></a>
+        <!-- 現在のプレイヤー-->
+        <div id="current-player" class="box2">
+            {% if finish_flag == False %}
+                <p>あなたのターン</p>
+            {% else %}
+                <p>ゲーム終了</p>
+                <form action="{{url}}" method="get">
+                    <p>同じ相手ともう一度プレイ</p>
+                    <div class="radio-group">
+                        <div class="radio-area">
+                            <input id="radio3" class="radiobutton" type="radio" name="PlayOrder" value="先攻" checked="">
+                            <label for="radio3">先攻</label>
+                        </div>
+                        <div class="radio-area">
+                            <input id="radio4" class="radiobutton" type="radio" name="PlayOrder" value="後攻">
+                            <label for="radio4">後攻</label> 
+                        </div>
+                    </div>
+                    <input type="submit" value='再試合' class="submitbutton">
+                </form>
+            {% endif%}
+        </div>
+        <!-- 現在の状態-->
+        <div id="message">
+
+        </div>
+
+    </div> 
+</div> 
+{% endblock %}

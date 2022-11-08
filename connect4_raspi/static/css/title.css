@@ -1,0 +1,95 @@
+h2 {
+    color: #194C61;
+    text-align: center;
+    padding: 0.25em;
+    border-top: solid 2px #194C61;
+    border-bottom: solid 2px #194C61;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+ul li {
+    padding-top: 0.5em; 
+    padding-bottom: 0.5em;
+}
+
+ol li {
+    padding-top: 0.5em; 
+    padding-bottom: 0.5em;
+}
+
+.box1 {
+    margin: 2em 1em 2em 1em;
+    background: #dcefff;
+    text-align: center;
+    padding-bottom: 1em;
+}
+.box1 .box-title {
+    font-size: 1.2em;
+    background: #5fb3f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.box2 {
+    text-align: center;
+    padding: 0.5em 1em;
+    margin: 2em 1em 2em 1em;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.radio-group {
+    justify-content: center;
+    display: flex;
+    column-gap: .5rem;
+    padding: 1rem 0.5rem;
+}
+
+.radio-area input[type=radio] {
+    display: none;
+}
+
+.radio-area label {
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #333;
+    transition: .5s;
+}
+
+.radio-area input[type=radio]:checked+label {
+    color: white;
+    background-color: #5fb3f5;
+}
+
+.submitbutton {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 18pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #ffffff;     /* 背景色     */
+    color         : #2c2cba;      /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+    border        : 2px solid #000066;    /* 枠の指定 */
+}
+.submitbutton:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #ffffff;     /* 背景色     */
+    background    : #194C61;     /* 文字色     */
+}
+
+

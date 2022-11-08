@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/title.css')}}">
+{% endblock %}
+
+{% block body %}
+<h2>コネクトフォーの開始画面デス。</h2>
+<div class = "pure-g">
+    <div class = "pure-u-2-5">
+        <div class ="box1">
+            <form action="/game/randomchoice" method="get">
+                <p class="box-title">vs RandomAI</p>
+                先攻・後攻を選択してください
+                <div class="radio-group">
+                    <div class="radio-area">
+                        <input id="radio1" class="radiobutton" type="radio" name="PlayOrder" value="先攻" checked="">
+                        <label for="radio1">先攻</label>
+                    </div>
+                    <div class="radio-area">
+                        <input id="radio2" class="radiobutton" type="radio" name="PlayOrder" value="後攻">
+                        <label for="radio2">後攻</label> 
+                    </div>
+                </div>
+                <input type="submit" value='ゲーム開始' class="submitbutton">
+            </form>
+        </div>
+
+        <div class="box1">
+            <form action="/game/alphazero" method="get">
+                <p class="box-title">vs Alphazero(弱い)</p>
+                先攻・後攻を選択してください
+                <div class="radio-group">
+                    <div class="radio-area">
+                        <input id="radio3" class="radiobutton" type="radio" name="PlayOrder" value="先攻" checked="">
+                        <label for="radio3">先攻</label>
+                    </div>
+                    <div class="radio-area">
+                        <input id="radio4" class="radiobutton" type="radio" name="PlayOrder" value="後攻">
+                        <label for="radio4">後攻</label> 
+                    </div>
+                </div>
+                <input type="submit" value='ゲーム開始' class="submitbutton">
+            </form>
+        </div>
+
+        <div class="box1">
+            <form action="" method="get">
+                <p class="box-title">vs とても強いAI</p>
+                先攻・後攻を選択してください
+                <div class="radio-group">
+                    <div class="radio-area">
+                        <input id="radio3" class="radiobutton" type="radio" name="PlayOrder" value="先攻" checked="">
+                        <label for="radio3">先攻</label>
+                    </div>
+                    <div class="radio-area">
+                        <input id="radio4" class="radiobutton" type="radio" name="PlayOrder" value="後攻">
+                        <label for="radio4">後攻</label> 
+                    </div>
+                </div>
+                <input type="submit" value='近日公開予定' class="submitbutton">
+            </form>
+        </div>
+
+
+    </div>
+    <div class = "pure-u-3-5">
+        <div class ="box1">
+            <div class="box-title">ルール説明</div>
+                <ol>
+                    <li>二人で交互にプレイします</li>
+                    <li>下のマスからコマを順に積み重ねます</li>
+                    <li>縦・横・斜めのいずれか先に4つコマを並べた方が勝ちです</li>
+                </ol>
+        </div>
+
+        <div class="box1">
+            <div class="box-title">その他</div>
+                <ul>
+                    <li>html+css+flaskで動作しています</li>
+                    <li>vs alphazeroはAIが手を打つのに少し時間がかかります</li>
+                    <li>サーバーは貧弱なので動作が遅いかもしれないです</li>
+                    <li>cssのみを使用している関係で、相手の手の待機時間がおかしいです</li>
+                </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

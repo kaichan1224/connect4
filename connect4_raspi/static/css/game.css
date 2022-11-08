@@ -1,0 +1,66 @@
+#table {
+    border-collapse: collapse;
+    /*テーブルのライン */
+	border: 5px solid #999;
+}
+
+#action_table {
+	border-collapse: collapse;
+    /*テーブルのライン */
+	border: 5px solid rgb(255, 255, 255);
+}
+
+.actions_legal:hover {
+	background: #f66 !important;
+	cursor: pointer;
+}
+
+.stone_player {
+	border: 1px solid #999;
+	background: rgb(255, 0, 0);
+	width: 4em;
+	height: 4em;
+	text-align: center;
+}
+
+.stone_enemy {
+	border: 1px solid #999;
+	background: rgb(68, 255, 0);
+	width: 4em;
+	height: 4em;
+	text-align: center;
+}
+
+.stone_empty {
+	border: 1px solid #999;
+	background: #dde;
+	width: 4em;
+	height: 4em;
+	text-align: center;
+}
+
+.actions_legal{
+	border: 1px solid rgb(255, 255, 255);
+	background: rgb(255, 255, 255);
+	width: 4em;
+	height: 4em;
+	text-align: center;
+}
+
+.actions_illegal{
+	border: 1px solid rgb(255, 255, 255);
+	background: rgb(255, 255, 255);
+	width: 4em;
+	height: 4em;
+	text-align: center;
+}
+
+.actions_arrow{
+	color:coral;
+	font-size: 150%;
+}
+
+.goback{
+	text-align: center;
+}
+
